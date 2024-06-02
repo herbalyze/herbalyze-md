@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profile_option"
+        android:title="@string/profile" />
+    <item
+        android:id="@+id/saved_plants_option"
+        android:title="@string/saved_plants" />
+    <item
+        android:id="@+id/logout_option"
+        android:title="@string/logout"/>
+</menu>
