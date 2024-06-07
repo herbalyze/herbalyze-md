@@ -18,7 +18,11 @@ class CustomButton @JvmOverloads constructor(
     private var disabledBackground: Drawable
 
     init {
-        txtColor = ContextCompat.getColor(context, android.R.color.background_light)
+        // Memuat atribut warna teks dari XML layout
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomButton)
+        txtColor = typedArray.getColor(R.styleable.CustomButton_android_textColor, ContextCompat.getColor(context, android.R.color.background_light))
+        typedArray.recycle()
+
         enabledBackground = ContextCompat.getDrawable(context, R.drawable.bg_button) as Drawable
         disabledBackground = ContextCompat.getDrawable(context, R.drawable.bg_button_disable) as Drawable
     }

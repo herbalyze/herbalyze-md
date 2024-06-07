@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.dayeeen.herbalyze" />
+                  <option name="mobileSdkAppId" value="1:914009778542:android:d6f7d31c51d511a31b397f" />
+                  <option name="projectId" value="herbalyze-425010" />
+                  <option name="projectNumber" value="914009778542" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

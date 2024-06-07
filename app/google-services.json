@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "914009778542",
+    "project_id": "herbalyze-425010",
+    "storage_bucket": "herbalyze-425010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914009778542:android:d6f7d31c51d511a31b397f",
+        "android_client_info": {
+          "package_name": "com.dayeeen.herbalyze"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914009778542-4vhhpspdoqhfieha08u9js1iacjmvme5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dayeeen.herbalyze",
+            "certificate_hash": "f5235ef01f167546b3c8705d3161120a890a64aa"
+          }
+        },
+        {
+          "client_id": "914009778542-0ui5segiiaad8canv3phqoaabtom2h4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw9usjO1sojQFcKDR9U13zKOpsr_A_tC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914009778542-0ui5segiiaad8canv3phqoaabtom2h4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,7 +10,7 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
-import com.dayeeen.mystoryapp.R
+import com.dayeeen.herbalyze.R
 
 class CustomEditText @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
@@ -34,7 +34,7 @@ class CustomEditText @JvmOverloads constructor(
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 // Password kurang dari 8 karakter akan dapat warning
-                if (this@CustomEditText.id == R.id.ed_login_password || this@CustomEditText.id == R.id.ed_register_password) {
+                if (this@CustomEditText.id == R.id.ed_login_password || this@CustomEditText.id == R.id.ed_login_password) {
                     if (s.length < 8) {
                         // Show error message directly on the EditText
                         error = "Password must be at least 8 characters"
@@ -44,7 +44,7 @@ class CustomEditText @JvmOverloads constructor(
                     }
                 }
                 // Penulisan email yang salah juga akan dapat warning
-                if (this@CustomEditText.id == R.id.ed_login_email || this@CustomEditText.id == R.id.ed_register_email ) {
+                if (this@CustomEditText.id == R.id.ed_login_email || this@CustomEditText.id == R.id.ed_login_email ) {
                     if (!android.util.Patterns.EMAIL_ADDRESS.matcher(s).matches()) {
                         // Show error message directly on the EditText
                         error = "Email is not valid"
