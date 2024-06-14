@@ -6,12 +6,17 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.credentials.ClearCredentialStateRequest
 import androidx.credentials.CredentialManager
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dayeeen.herbalyze.R
 import com.dayeeen.herbalyze.databinding.ActivityMainBinding
+import com.dayeeen.herbalyze.ui.adapters.PlantsAdapter
+import com.dayeeen.herbalyze.viewmodel.MainViewModel
+import com.dayeeen.herbalyze.viewmodel.ViewModelFactory
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -21,6 +26,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
+    private val mvm by viewModels<MainViewModel> {
+        ViewModelFactory.getInstance(this)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -41,6 +50,18 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
+        showPlants()
+
+    }
+
+    private fun showPlants() {
+        val adapter = PlantsAdapter()
+        binding.rvPlants.adapter = adapter
+        binding.rvPlants.layoutManager = LinearLayoutManager(this)
+
+        mvm.plants.observe(this) { plants ->
+            adapter.submitList(plants)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
