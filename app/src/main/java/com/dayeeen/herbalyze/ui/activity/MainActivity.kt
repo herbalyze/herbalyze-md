@@ -38,6 +38,16 @@ class MainActivity : AppCompatActivity() {
         // Set Toolbar sebagai ActionBar
         setSupportActionBar(binding.topAppBar)
 
+        isFirebaseLogin()
+        showPlants()
+
+        binding.btnAdd.setOnClickListener {
+            startActivity(Intent(this, UploadActivity::class.java))
+        }
+
+    }
+
+    private fun isFirebaseLogin() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
@@ -49,9 +59,6 @@ class MainActivity : AppCompatActivity() {
             finish()
             return
         }
-
-        showPlants()
-
     }
 
     private fun showPlants() {
