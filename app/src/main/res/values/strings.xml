@@ -55,4 +55,6 @@
     <string name="your_web_client_id">914009778542-0ui5segiiaad8canv3phqoaabtom2h4p.apps.googleusercontent.com</string>
     <string name="sign_in_with_google">Sign In with Google</string>
     <string name="google_sign_in">Connect with Google</string>
+    <string name="recipe">Recipe:\n- Lorem ipsum\n- Dolor sit amet\n- Bla bla bla</string>
+    <string name="usage">Cara Penggunaan:\nDioles, dimakan, dikunyah, dll.</string>
 </resources>

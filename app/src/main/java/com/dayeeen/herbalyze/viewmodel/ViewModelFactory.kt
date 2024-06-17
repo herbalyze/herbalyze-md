@@ -24,9 +24,9 @@ class ViewModelFactory(private val repository: UserRepository) :
 //                RegisterViewModel(repository) as T
 //            }
 //
-//            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
-//                DetailViewModel(repository) as T
-//            }
+            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
+                DetailViewModel(repository) as T
+            }
 //
 //            modelClass.isAssignableFrom(UploadStoryViewModel::class.java) -> {
 //                UploadStoryViewModel(repository) as T

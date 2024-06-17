@@ -71,6 +71,9 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
 
+    // untuk lifecycleScope
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
     //DataStore
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

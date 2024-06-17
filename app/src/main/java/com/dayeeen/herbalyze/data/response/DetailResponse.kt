@@ -1,6 +1,8 @@
 package com.dayeeen.herbalyze.data.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class DetailResponse(
 
@@ -31,3 +33,24 @@ data class RecipesItem(
 	@field:SerializedName("_id")
 	val id: String
 )
+
+@Parcelize
+data class ResultResponse(
+	@field:SerializedName("_id")
+	val id: String,
+
+	@field:SerializedName("name")
+	val name: String,
+
+	@field:SerializedName("imageUrl")
+	val imageUrl: String,
+
+	@field:SerializedName("description")
+	val description: String,
+
+	@field:SerializedName("createdAt")
+	val createdAt: String,
+
+	@field:SerializedName("predictionScore")
+	val predictionScore: Double
+) : Parcelable
