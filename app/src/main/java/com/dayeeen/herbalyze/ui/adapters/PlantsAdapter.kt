@@ -34,7 +34,7 @@ class PlantsAdapter : ListAdapter<PlantResponseItem, PlantsAdapter.MyViewHolder>
             binding.tvDescription.text = plant.description
             Glide.with(itemView.context)
                 .load(plant.imageUrl)
-                .placeholder(R.drawable.load_photo)
+                .placeholder(R.drawable.load_photos)
                 .error(R.drawable.ic_launcher_foreground)
                 .into(binding.ivItemPhoto)
 
