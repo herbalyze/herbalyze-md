@@ -14,12 +14,8 @@
     <string name="username">Enter your username</string>
     <string name="img_desc">Image of a story</string>
     <string name="profile_image_desc">Profile Image for User</string>
-    <string name="start_desc">Wanna share your story? Wanna see what\'s happening in your area? Don\'t worry, we\'ve got you covered.</string>
-    <string name="start_title">Let\'s Get Started</string>
-    <string name="copyright">© Created by Dian Saputra.</string>
     <string name="upload">Upload</string>
     <string name="add">Add</string>
-    <string name="fill_caption">Fill the caption...</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="load_error">Loading error...</string>
@@ -56,5 +52,13 @@
     <string name="sign_in_with_google">Sign In with Google</string>
     <string name="google_sign_in">Connect with Google</string>
     <string name="recipe">Recipe:\n- Lorem ipsum\n- Dolor sit amet\n- Bla bla bla</string>
-    <string name="usage">Cara Penggunaan:\nDioles, dimakan, dikunyah, dll.</string>
+    <string name="usage">Dioles, dimakan, dikunyah, dll.</string>
+    <string name="prediction_score">Tingkat Kemiripan: 99%</string>
+    <string name="check_detail">Cek Rinciannya</string>
+    <string name="reupload">Upload Ulang</string>
+    <string name="still_processing_image">Sedang memproses gambar....</string>
+    <string name="recipeName">Nama Resep</string>
+    <string name="usageTitle">Cara Penggunaan:</string>
+    <string name="benefits">Manfaat:</string>
+    <string name="back_home">Kembali ke Beranda</string>
 </resources>
