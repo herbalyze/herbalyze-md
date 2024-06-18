@@ -19,7 +19,16 @@ data class DetailResponse(
 	val name: String,
 
 	@field:SerializedName("description")
-	val description: String
+	val description: String,
+
+	@field:SerializedName("recipeName")
+	val recipeName: String,
+
+	@field:SerializedName("recipeGuide")
+	val recipeGuide: String,
+
+	@field:SerializedName("benefits")
+	val benefits: List<String>
 )
 
 data class RecipesItem(
