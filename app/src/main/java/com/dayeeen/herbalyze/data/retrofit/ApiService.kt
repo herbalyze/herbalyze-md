@@ -3,6 +3,7 @@ package com.dayeeen.herbalyze.data.retrofit
 import com.dayeeen.herbalyze.data.response.DetailResponse
 import com.dayeeen.herbalyze.data.response.PlantResponse
 import com.dayeeen.herbalyze.data.response.PlantResponseItem
+import com.dayeeen.herbalyze.data.response.PredictionResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.GET
@@ -26,6 +27,6 @@ interface ApiService {
     @POST("predict")
     suspend fun uploadImage(
         @Part image: MultipartBody.Part,
-        @Part("userId") userId: RequestBody
-    ): DetailResponse
+        @Part("userId") userId: Int
+    ): PredictionResponse
 }
