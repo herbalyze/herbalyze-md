@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,115 +7,98 @@
     android:background="@color/primary"
     tools:context=".ui.activity.DetailActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/materialToolbar"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/secondary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:title="Plant Detail"
             app:titleTextColor="@color/white" />
 
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_detail_story"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:radius="16dp"
-            android:transitionName="card"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="8dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/materialToolbar"
-            app:layout_constraintVertical_bias="1.0"
-            tools:layout_editor_absoluteX="-16dp">
+            android:orientation="vertical"
+            android:padding="12dp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/dt_plant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="@string/plant_name" />
+
+            <TextView
+                android:id="@+id/dt_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginTop="8dp"
+                android:text="@string/description"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/dt_plant_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/plant_name"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/materialToolbar" />
+            <ImageView
+                android:id="@+id/dt_plant_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/img_desc"
+                android:scaleType="centerCrop"
+                android:src="@drawable/plant" />
 
-                <TextView
-                    android:id="@+id/dt_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/description"
-                    android:textSize="16sp"
-                    android:transitionName="description"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/dt_user_name" />
+            <TextView
+                android:id="@+id/benefitsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/benefits"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/dt_plant_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:contentDescription="@string/img_desc"
-                    android:src="@drawable/plant"
-                    android:transitionName="image"
-                    app:layout_constraintTop_toBottomOf="@id/dt_description" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/benefitsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-                <TextView
-                    android:id="@+id/dt_usage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/usage"
-                    android:textSize="16sp"
-                    android:transitionName="@string/usage"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/dt_plant_image" />
+            <TextView
+                android:id="@+id/dt_usage_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/usageTitle"
+                android:textStyle="bold"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/dt_recipe"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="12dp"
-                    android:text="@string/recipe"
-                    android:textSize="16sp"
-                    android:transitionName="@string/recipe"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/dt_usage" />
+            <TextView
+                android:id="@+id/dt_usage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/usage"
+                android:textSize="16sp" />
 
-            </LinearLayout>
+            <TextView
+                android:id="@+id/dt_recipeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/recipeName"
+                android:textStyle="bold"
+                android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/dt_recipeGuide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/recipe"
+                android:textSize="16sp" />
 
+        </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
