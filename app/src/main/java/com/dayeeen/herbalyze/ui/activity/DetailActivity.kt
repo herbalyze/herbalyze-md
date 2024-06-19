@@ -2,6 +2,7 @@ package com.dayeeen.herbalyze.ui.activity
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +12,7 @@ import com.dayeeen.herbalyze.databinding.ActivityDetailBinding
 import com.dayeeen.herbalyze.ui.adapters.BenefitsAdapter
 import com.dayeeen.herbalyze.viewmodel.DetailViewModel
 import com.dayeeen.herbalyze.viewmodel.ViewModelFactory
+import com.google.android.material.snackbar.Snackbar
 
 class DetailActivity : AppCompatActivity() {
 
@@ -28,18 +30,21 @@ class DetailActivity : AppCompatActivity() {
         Log.d("DetailActivity", "Received PLANT_ID: $plantId")
 
         if (plantId != null) {
+            showLoading(true)
             viewModel.getPlantDetail(plantId)
         }
 
         viewModel.plantDetail.observe(this) { plant ->
+            showLoading(false)
             plant?.let {
                 setPlantDetails(it)
             }
         }
 
         viewModel.error.observe(this) { errorMessage ->
+            showLoading(false)
             Log.e("DetailActivity", "Error fetching plant detail: $errorMessage")
-            // Show an error message to the user
+            Snackbar.make(binding.root, errorMessage, Snackbar.LENGTH_LONG).show()
         }
     }
 
@@ -63,5 +68,10 @@ class DetailActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@DetailActivity)
             this.adapter = adapter
         }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        Log.d("DetailActivity", "showLoading: $isLoading")
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 }
