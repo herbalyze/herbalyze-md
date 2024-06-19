@@ -54,14 +54,14 @@
                     android:layout_marginTop="8dp"
                     android:contentDescription="@string/img_desc"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/load_photos" />
+                    tools:src="@drawable/load_photos" />
 
                 <TextView
                     android:id="@+id/benefitsTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    tools:text="@string/benefits"
+                    android:text="@string/benefits"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -75,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    tools:text="@string/usageTitle"
+                    android:text="@string/usageTitle"
                     android:textStyle="bold"
                     android:textSize="16sp" />
 
