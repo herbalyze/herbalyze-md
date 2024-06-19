@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set Toolbar sebagai ActionBar
+        // Set Toolbar as ActionBar
         setSupportActionBar(binding.topAppBar)
 
         isFirebaseLogin()
@@ -66,9 +67,16 @@ class MainActivity : AppCompatActivity() {
         binding.rvPlants.adapter = adapter
         binding.rvPlants.layoutManager = LinearLayoutManager(this)
 
+        showLoading(true)
         mvm.plants.observe(this) { plants ->
+            showLoading(false)
             adapter.submitList(plants)
         }
+
+//        mvm.error.observe(this) { errorMessage ->
+//            showLoading(false)
+//            Toast.makeText(this, "Error fetching plants: $errorMessage", Toast.LENGTH_SHORT).show()
+//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -107,5 +115,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             finish()
         }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 }
